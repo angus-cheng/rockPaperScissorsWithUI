@@ -5,7 +5,6 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     playerSelection.toLowerCase();
-
     switch (playerSelection) {
         case 'rock':
             if (computerSelection == 'Rock') return 'You tie!';
@@ -28,28 +27,73 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-let game = function() {
-    let playerScore = 0;
-    let compScore = 0;
-
-    for (i = 0; i < 5; i++) {
-        let playerSelection = window.prompt('Rock, paper or scissors?');
-        switch (playRound(playerSelection, computerPlay())) {
-            case 'You win!':
-                playerScore++;
-                break;
-
-            case 'You lose!':
-                compScore++;
-                break;
-        }
-        
-        console.log(`Your score: ${playerScore}. Computer's score: ${compScore}`);
+class game {
+    constructor() {
+        this.playerScore = 0;
+        this.computerScore = 0;
     }
 
-    if (playerScore > compScore) return 'You are the winner';
-    else if (playerScore < compScore) return 'You are the loser';
-    else return 'You tie with a computer...';
+    addToPlayerScore() {
+        this.playerScore += 1;
+    }
+
+    addToComputerScore() {
+        this.computerScore += 1;
+    }
+
+    getPlayerScore() {
+        return this.playerScore;
+    }
+
+    getComputerScore() {
+        return this.computerScore;
+    }
+
+    checkWin() {
+        if (this.playerScore >= 5 || this.computerScore >= 5) {
+            return true;
+        }
+
+        return false;
+    }
 }
 
-console.log(game());
+
+function displayPlayerOption(playerChoice) {
+    let option = document.querySelector('.playerOption');
+    option.textContent = `You played ${playerChoice.id}`;
+}
+
+function changeScore() {
+    let score = document.querySelector('.score');
+    score.textContent = `The score is ${match.getPlayerScore()}-${match.getComputerScore()} (player-computer)`
+    if (match.checkWin()) {
+        if (match.getPlayerScore() > match.getComputerScore()) score.textContent = 'You are the grand winner';
+        else if (match.getPlayerScore() < match.getComputerScore()) score.textContent = 'You are the grand loser';
+        else score.textCOntent = 'You tie with a computer...';
+    }
+}
+
+function displayResult() {
+    displayPlayerOption(this);
+
+    let computersHand = computerPlay();    
+    let resultClass = document.querySelector('.result');
+    let result = playRound(this.id, computersHand);
+
+    if (result == 'You tie!') {
+        resultClass.textContent = `The computer played ${computersHand}. You tie!`;
+    } else if (result = 'You win!') {
+        resultClass.textContent = `The computer played ${computersHand}. You win!`;
+        match.addToPlayerScore();
+        changeScore();
+    } else {
+        resultClass.textContent = `The computer played ${computersHand}. You lose!`;
+        match.addToComputerScore();
+        changeScore();
+    }
+}
+
+const buttons = (document.querySelectorAll('button'));
+buttons.forEach(button => button.addEventListener('click', displayResult));
+let match = new game();
