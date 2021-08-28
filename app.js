@@ -16,3 +16,16 @@ const io=socket(server);
 let players={};
 //GAME VARIABLES
 let choice1="",choice2="";
+
+io.on("connection",(socket)=>{
+    console.log("connection established");
+
+    //Create Game Listener
+    socket.on("createGame",(data)=>{
+        const roomID=randomstring.generate({length: 4});
+        socket.join(roomID);
+        players[roomID]=data.name;
+        socket.emit("newGame",{roomID:roomID});
+    })
+
+})
