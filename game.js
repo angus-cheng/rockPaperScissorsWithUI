@@ -94,13 +94,13 @@ function displayResult() {
     }
 }
 
-function toggleDisplay(id) {
-    element = document.getElementById(id);
+function toggleDisplay() {
+    element = document.getElementById('compGame');
     element.style.display = 'block';
 }
 
 const compGameBut = document.querySelector('#computer');
-compGameBut.addEventListener('click', toggleDisplay('compGame'));
+compGameBut.addEventListener('click', toggleDisplay);
 
 const buttons = document.querySelectorAll('.option');
 buttons.forEach(button => button.addEventListener('click', displayResult));
