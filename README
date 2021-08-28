@@ -1,6 +1,6 @@
 See live demo here -> https://angus-cheng.github.io/rockPaperScissorsWithUI/
 
-Step to Setup on your local
+## Step to Setup on your local
 Clone this repo.
 Inside the directory, run ```npm install``` to install all the dependecies.
 Then ```npm start``` to Start the App.
