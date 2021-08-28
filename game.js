@@ -94,6 +94,18 @@ function displayResult() {
     }
 }
 
-const buttons = (document.querySelectorAll('button'));
+function toggleDisplay(id) {
+    let element = document.querySelector(id);
+    element.style.disply = 'block';
+}
+
+function hello() {
+    console.log('hello');
+}
+
+const playCompBut = document.querySelector('#computer');
+playCompBut.addEventListener('click', toggleDisplay('#compGame'));
+
+const buttons = document.querySelectorAll('.option');
 buttons.forEach(button => button.addEventListener('click', displayResult));
 let match = new game();
