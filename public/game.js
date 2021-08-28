@@ -1,3 +1,8 @@
+const socket = io.connect("http://localhost:4000");
+
+let firstPlayer=false;
+let roomID;
+
 function computerPlay() {
     const options = ['Rock', 'Paper', 'Scissors'];
     return options[Math.floor(Math.random() * 3)];
@@ -94,6 +99,13 @@ function displayResult() {
     }
 }
 
+function createGame() {
+    firstPlayer=true;
+    //const playerName=$("input[name=p1name").val();
+    const playerName = "Steve"
+    socket.emit('createGame',{name:playerName});
+}
+
 function toggleDisplay(id) {
     element = document.getElementById(id);
     element.style.display = 'block';
@@ -107,4 +119,14 @@ compGameBut.addEventListener('click', () => {toggleDisplay('compGame')});
 
 const buttons = document.querySelectorAll('#compGame .option');
 buttons.forEach(button => button.addEventListener('click', displayResult));
+
+const createGameButton = document.querySelector('#create');
+createGameButton.addEventListener('click', createGame);
+
+//New Game Created Listener
+socket.on("newGame",(data)=>{
+    document.querySelector("#message").innerText = "Waiting for player 2, room ID is " + data.roomID;
+    roomID=data.roomID;
+})
+
 let match = new game();
