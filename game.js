@@ -99,19 +99,14 @@ function displayResult() {
     }
 }
 
-<<<<<<< HEAD
-function createGameButton() {
+function createGame() {
     firstPlayer=true;
     const playerName=$("input[name=p1name").val();
     socket.emit('createGame',{name:playerName});
 }
 
-function toggleDisplay() {
-    element = document.getElementById('compGame');
-=======
 function toggleDisplay(id) {
     element = document.getElementById(id);
->>>>>>> 4f8d321cc2c70e8971f5474a033bc111c8032a91
     element.style.display = 'block';
 }
 
