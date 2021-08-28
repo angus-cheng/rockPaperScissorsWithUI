@@ -68,8 +68,8 @@ function changeScore() {
     let score = document.querySelector('.score');
     score.textContent = `The score is ${match.getPlayerScore()}-${match.getComputerScore()} (player-computer)`
     if (match.checkWin()) {
-        if (match.getPlayerScore() > match.getComputerScore()) score.textContent = 'You are the grand winner';
-        else if (match.getPlayerScore() < match.getComputerScore()) score.textContent = 'You are the grand loser';
+        if (match.getPlayerScore() > match.getComputerScore()) score.textContent = 'You are the winner';
+        else if (match.getPlayerScore() < match.getComputerScore()) score.textContent = 'You are the loser';
         else score.textCOntent = 'You tie with a computer...';
     }
 }
@@ -83,7 +83,7 @@ function displayResult() {
 
     if (result == 'You tie!') {
         resultClass.textContent = `The computer played ${computersHand}. You tie!`;
-    } else if (result = 'You win!') {
+    } else if (result == 'You win!') {
         resultClass.textContent = `The computer played ${computersHand}. You win!`;
         match.addToPlayerScore();
         changeScore();
