@@ -120,5 +120,5 @@ const buttons = document.querySelectorAll('.option');
 buttons.forEach(button => button.addEventListener('click', displayResult));
 
 const createGameButton = document.querySelector('#createGame');
-createGameButton.addEventListener('click', )
+createGameButton.addEventListener('click', createGame)
 let match = new game();
