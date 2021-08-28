@@ -1,3 +1,8 @@
+//const socket = io.connect("http://localhost:4000");
+
+let firstPlayer=false;
+let roomID;
+
 function computerPlay() {
     const options = ['Rock', 'Paper', 'Scissors'];
     return options[Math.floor(Math.random() * 3)];
@@ -94,6 +99,12 @@ function displayResult() {
     }
 }
 
+function createGameButton() {
+    firstPlayer=true;
+    const playerName=$("input[name=p1name").val();
+    socket.emit('createGame',{name:playerName});
+}
+
 function toggleDisplay() {
     element = document.getElementById('compGame');
     element.style.display = 'block';
@@ -104,4 +115,7 @@ compGameBut.addEventListener('click', toggleDisplay);
 
 const buttons = document.querySelectorAll('.option');
 buttons.forEach(button => button.addEventListener('click', displayResult));
+
+const createGameButton = document.querySelector('#createGame');
+createGameButton.addEventListener('click', )
 let match = new game();
