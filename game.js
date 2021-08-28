@@ -105,6 +105,6 @@ playerGameBut.addEventListener('click', () => {toggleDisplay('playerGame')});
 const compGameBut = document.querySelector('#computer');
 compGameBut.addEventListener('click', () => {toggleDisplay('compGame')});
 
-const buttons = document.querySelectorAll('.option');
+const buttons = document.querySelectorAll('#compGame .option');
 buttons.forEach(button => button.addEventListener('click', displayResult));
 let match = new game();
