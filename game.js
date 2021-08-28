@@ -94,13 +94,16 @@ function displayResult() {
     }
 }
 
-function toggleDisplay() {
-    element = document.getElementById('compGame');
+function toggleDisplay(id) {
+    element = document.getElementById(id);
     element.style.display = 'block';
 }
 
+const playerGameBut = document.querySelector('#multiplayer');
+playerGameBut.addEventListener('click', () => {toggleDisplay('playerGame')});
+
 const compGameBut = document.querySelector('#computer');
-compGameBut.addEventListener('click', toggleDisplay);
+compGameBut.addEventListener('click', () => {toggleDisplay('compGame')});
 
 const buttons = document.querySelectorAll('.option');
 buttons.forEach(button => button.addEventListener('click', displayResult));
