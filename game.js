@@ -95,16 +95,12 @@ function displayResult() {
 }
 
 function toggleDisplay(id) {
-    let element = document.querySelector(id);
-    element.style.disply = 'block';
+    element = document.getElementById(id);
+    element.style.display = 'block';
 }
 
-function hello() {
-    console.log('hello');
-}
-
-const playCompBut = document.querySelector('#computer');
-playCompBut.addEventListener('click', toggleDisplay('#compGame'));
+const compGameBut = document.querySelector('#computer');
+compGameBut.addEventListener('click', toggleDisplay('compGame'));
 
 const buttons = document.querySelectorAll('.option');
 buttons.forEach(button => button.addEventListener('click', displayResult));
