@@ -4,6 +4,7 @@
         <meta charset='UTF-8'>
         <title>Rock Paper Scissors</title>
         <link rel='stylesheet' href='styles.css'>
+        <script src="/socket.io/socket.io.js"></script>
     </head>
     <body onbeforeunload="disconnect()">
         <header>
@@ -13,6 +14,7 @@
         </header>
         <div id='playerGame'>
             <button id='create'>Create Game</button>
+            <div id= 'message'></div>
         </div>
         <div id='compGame'>
             <button class='option' id='rock'>Rock</button>
