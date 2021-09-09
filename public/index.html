@@ -10,25 +10,29 @@
         <script src="/socket.io/socket.io.js"></script>
     </head>
     <body onbeforeunload="disconnect()">
-        <header>
-            <h1>Rock, Paper, Scissors</h1>
-            Get your hands in the game
-            <br>
-            <button id='multiplayer'>Player</button>
-            <button id='computer'>Computer</button>
-        </header>
-        <div id='playerGame'>
-            <button id='create'>Create Game</button>
-            <div id= 'message'></div>
-        </div>
-        <div id='compGame'>
-            <button class='option' id='rock'>Rock</button>
-            <button class='option' id='paper'>Paper</button>
-            <button class='option' id='scissors'>Scissors</button>
-            <p>What is your play?</p>
-            <div class="playerOption"></div>
-            <div class="result"></div>
-            <div class='score'>First to 5 wins. The score is 0-0 (player-computer)</div>
+            <div class="titleBg">
+                <h1>Rock, Paper, Scissors</h1>
+            </div>
+        <div class="contentBg">
+            <div class='contentText'>
+                Get your hands in the game
+                <br>
+                <button id='multiplayer'>Player</button>
+                <button id='computer'>Computer</button>
+                <div id='playerGame'>
+                    <button id='create'>Create Game</button>
+                    <div id= 'message'></div>
+                </div>
+                <div id='compGame'>
+                    <button class='option' id='rock'>Rock</button>
+                    <button class='option' id='paper'>Paper</button>
+                    <button class='option' id='scissors'>Scissors</button>
+                    <p>What is your play?</p>
+                    <div class="playerOption"></div>
+                    <div class="result"></div>
+                    <div class='score'>First to 5 wins. The score is 0-0 (player-computer)</div>
+                </div>
+            </div>
         </div>
         <script src='game.js'></script>
     </body>
