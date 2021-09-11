@@ -84,9 +84,9 @@ body {
 
 /* Start with no display of game */
 #compGame {
-    display: none;
+    visibility: none;
 }
 
 #playerGame {
-    display: none;
+    visibility: none;
 }
