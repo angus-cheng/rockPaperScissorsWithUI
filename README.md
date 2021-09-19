@@ -8,12 +8,12 @@ See live demo here -> https://angus-cheng.github.io/rockPaperScissorsWithUI/
 4. Go to [localhost:4000](http://localhost:4000) to view the app.
 
 TODO:
-[] new match button for computer and player \n
-[] loading screen
-[] multiplayer
-[] score count bubbles
-[] login
-    [] login with google account
-[] about section
-[] tutorial
-[] stats
+[] new match button for computer and player <br />
+[] loading screen <br />
+[] multiplayer <br />
+[] score count bubbles <br />
+[] login <br />
+    [] login with google account <br />
+[] about section <br />
+[] tutorial <br />
+[] stats <br />
