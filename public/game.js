@@ -112,20 +112,28 @@ function toggleDisplay(id) {
     element.style.opacity = 1;
 }
 
-const playerGameBut = document.querySelector('#multiplayer');
-playerGameBut.addEventListener('click', () => {toggleDisplay('playerGame')});
+/*
+    BUTTONS
+*/
+const playerGameBtn = document.querySelector('#multiplayer');
+playerGameBtn.addEventListener('click', () => {toggleDisplay('playerGame')});
 
-const compGameBut = document.querySelector('#computer');
-compGameBut.addEventListener('click', () => {toggleDisplay('compGame')});
+const compGameBtn = document.querySelector('#computer');
+compGameBtn.addEventListener('click', () => {toggleDisplay('compGame')});
 
-const buttons = document.querySelectorAll('#compGame .option');
-buttons.forEach(button => button.addEventListener('click', displayResult));
+const rockPaperScissorBtns = document.querySelectorAll('#compGame .option');
+rockPaperScissorBtns.forEach(button => button.addEventListener('click', displayResult));
 
-const createGameButton = document.querySelector('#create');
-createGameButton.addEventListener('click', createGame);
+const createGameBtn = document.querySelector('#create');
+createGameBtn.addEventListener('click', createGame);
+
+const startGameBtn = document.querySelector('.titleBg');
+startGameBtn.addEventListener('click', () => {
+    startGameBtn.setAttribute('style', 'opacity: 0; transition: opacity 0.6s linear');
+});
 
 //New Game Created Listener
-socket.on("newGame",(data)=>{
+socket.on("newGame", (data) => {
     document.querySelector("#message").innerText = "Waiting for player 2, room ID is " + data.roomID;
-    roomID=data.roomID;
-})
+    roomID = data.roomID;
+});
