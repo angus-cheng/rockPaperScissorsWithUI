@@ -1,7 +1,7 @@
 // const socket = io.connect("http://localhost:4000");
 
-const firstPlayer=false;
-const roomID;
+let firstPlayer=false;
+let roomID;
 
 function computerPlay() {
     const options = ['Rock', 'Paper', 'Scissors'];
