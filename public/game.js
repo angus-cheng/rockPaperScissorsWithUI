@@ -128,8 +128,13 @@ const createGameBtn = document.querySelector('#create');
 createGameBtn.addEventListener('click', createGame);
 
 const startGameBtn = document.querySelector('.titleBg');
+const content = document.querySelector('.contentBg');
 startGameBtn.addEventListener('click', () => {
-    startGameBtn.setAttribute('style', 'opacity: 0; transition: opacity 0.6s linear');
+    startGameBtn.setAttribute('style', 'opacity: 0; transition: 0.6s linear');
+    content.setAttribute('style', 'opacity: 1; transition: 0.6s linear; transition-delay: 1s') 
+});
+startGameBtn.addEventListener('transitionend', () => {
+    startGameBtn.setAttribute('style', 'display: none');
 });
 
 //New Game Created Listener

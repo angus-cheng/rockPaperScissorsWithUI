@@ -76,10 +76,12 @@ body {
     text-align: center;
     margin: 0;
     padding: 10px;
-    top: 60%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(30%);
+    transform: translateX(-50%) translateY(-50%);
     position: fixed;
+    opacity: 0;
+    z-index: -1;
 }
 
 /* Start with no display of game */
