@@ -1,7 +1,7 @@
-const socket = io.connect("http://localhost:4000");
+// const socket = io.connect("http://localhost:4000");
 
-let firstPlayer=false;
-let roomID;
+const firstPlayer=false;
+const roomID;
 
 function computerPlay() {
     const options = ['Rock', 'Paper', 'Scissors'];
@@ -32,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-class game {
+class compGame {
     constructor() {
         this.playerScore = 0;
         this.computerScore = 0;
@@ -108,7 +108,7 @@ function createGame() {
 
 function toggleDisplay(id) {
     element = document.getElementById(id);
-    element.style.display = 'block';
+    element.style.opacity = 1;
 }
 
 const playerGameBut = document.querySelector('#multiplayer');
@@ -129,4 +129,4 @@ socket.on("newGame",(data)=>{
     roomID=data.roomID;
 })
 
-let match = new game();
+let match = new compGame();

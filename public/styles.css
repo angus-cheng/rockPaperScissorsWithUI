@@ -84,9 +84,10 @@ body {
 
 /* Start with no display of game */
 #compGame {
-    visibility: none;
+    opacity: 0;
+    transition: opacity 0.6s linear;
 }
 
 #playerGame {
-    visibility: none;
+    visibility: hidden;
 }
