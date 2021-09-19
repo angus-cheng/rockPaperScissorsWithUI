@@ -63,6 +63,7 @@ class compGame {
     }
 }
 
+let match = new compGame();
 
 function displayPlayerOption(playerChoice) {
     let option = document.querySelector('.playerOption');
@@ -128,5 +129,3 @@ socket.on("newGame",(data)=>{
     document.querySelector("#message").innerText = "Waiting for player 2, room ID is " + data.roomID;
     roomID=data.roomID;
 })
-
-let match = new compGame();
