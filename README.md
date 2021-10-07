@@ -1,4 +1,4 @@
-See live demo here -> https://angus-cheng.github.io/rockPaperScissorsWithUI/public/index.html
+See live demo here -> https://angus-cheng.github.io/rockPaperScissorsWithUI/index.html
 
 TODO:
 <br />
